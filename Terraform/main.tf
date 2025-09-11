@@ -17,7 +17,7 @@ provider "aws" {
 resource "aws_instance" "k8s_master" {
   # Use a valid Ubuntu AMI ID for the us-east-1 region
   ami           = "ami-04f59c565deeb2199" 
-  instance_type = "t2.medium"             
+  instance_type = "t2.large"             
 
   key_name = "sheethalnv"         
 
@@ -25,6 +25,6 @@ resource "aws_instance" "k8s_master" {
   user_data = file("k8s-setup.sh")
 
   tags = {
-    Name = "Sheethal-K8s-Master"
+    Name = "sheethal-K8s"
   }
 }
